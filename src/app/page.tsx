@@ -88,7 +88,7 @@ export default function Home() {
                     </span>{" "}
                     from NIT Arunachal Pradesh, where he carried out research on{" "}
                     <span className="bg-gray-200 text-pink-500 px-1 rounded">
-                      "High Speed Data Links"
+                    &quot;High Speed Data Links&quot;
                     </span>{" "}
                     under the supervision of{" "}
                     <span className="bg-gray-200 text-pink-500 px-1 rounded">
@@ -175,7 +175,7 @@ export default function Home() {
                     He is also serving / served as an organizing member /
                     reviewer of many international conferences of repute.{" "}
                     <span className="bg-gray-200 text-pink-500 px-1 rounded">
-                      Dr. Majumder received "Best Research/Paper Award"
+                      Dr. Majumder received &quot;Best Research/Paper Award&quot;
                     </span>{" "}
                     from{" "}
                     <span className="bg-gray-200 text-pink-500 px-1 rounded">
