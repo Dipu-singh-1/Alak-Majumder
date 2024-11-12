@@ -1,112 +1,377 @@
+"use client"
 import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
+import Marquee from "@/components/Marquee";
+import { useState, useEffect } from 'react';
+import PageLoader from '@/components/PageLoader';
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate content loading
+    const timer = setTimeout(() => setIsLoading(false), 2000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (isLoading) {
+    return <PageLoader />
+  }
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main className="">
+      <div className="min-h-screen bg-white text-white">
+        {/* Hero Section */}
+        <section className="relative h-screen">
+          {/* <Image
+          src="/placeholder.svg"
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          className="opacity-50"
+        /> */}
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+          <video
+            className="absolute top-0 left-0 w-full h-full object-cover z-0"
+            autoPlay
+            muted
+            loop
+            src="/video1.mp4" // Replace with your video file path
+          />
+          <div className="absolute inset-0 flex flex-col justify-center px-4 sm:px-6 lg:px-8">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">
+              Alak Majumder
+            </h1>
+            <p className="text-xl sm:text-2xl text-blue-400">VLSI Expert.</p>
+          </div>
+        </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        {/* About Me Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="md:w-1/2 ">
+                <Image
+                  src="/images/pic4.jpg"
+                  alt="About Me"
+                  width={300}
+                  height={300}
+                  className="rounded-lg shadow-2xl"
+                />
+                <p className="text-pink-500 ml-12 mt-10 font-bold">
+                  " Dr. Alak Majumder "
+                </p>
+              </div>
+              <div className="md:w-1/2 text-black ">
+                <h2 className="text-2xl font-bold mb-2 text-blue-900">
+                  About Me
+                </h2>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+                <div className="max-w-4xl mx-auto">
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    <span className="bg-gray-200 text-pink-500 px-1 rounded">
+                      Dr. Alak Majumder
+                    </span>{" "}
+                    is a tenure track Assistant Professor in the Department of
+                    Electronics and Communication Engineering (ECE) at{" "}
+                    <span className="bg-gray-200 text-pink-500 px-1 rounded">
+                      National Institute of Technology (NIT), Arunachal Pradesh,
+                      India
+                    </span>
+                    , where he directs the{" "}
+                    <span className="bg-gray-200 text-pink-500 px-1 rounded">
+                      Integrated Circuit & System (i-CAS) Lab
+                    </span>{" "}
+                    founded in 2015. He holds a{" "}
+                    <span className="bg-gray-200 text-pink-500 px-1 rounded">
+                      Ph.D (Engg) in ECE
+                    </span>{" "}
+                    from NIT Arunachal Pradesh, where he carried out research on{" "}
+                    <span className="bg-gray-200 text-pink-500 px-1 rounded">
+                      "High Speed Data Links"
+                    </span>{" "}
+                    under the supervision of{" "}
+                    <span className="bg-gray-200 text-pink-500 px-1 rounded">
+                      Prof. (Dr) Bidyut K Bhattacharyya (Fellow IEEE)
+                    </span>{" "}
+                    and{" "}
+                    <span className="bg-gray-200 text-pink-500 px-1 rounded">
+                      Dr. P. Chakraborty
+                    </span>
+                    . Earlier, he earned BE in Electronics and Telecommunication
+                    Engineering from{" "}
+                    <span className="bg-gray-200 text-pink-500 px-1 rounded">
+                      Tripura Institute of Technology, Agartala, India
+                    </span>{" "}
+                    and{" "}
+                    <span className="bg-gray-200 text-pink-500 px-1 rounded">
+                      M-Tech in Microelectronics and VLSI Design
+                    </span>{" "}
+                    from National Institute of Technology, Agartala, India. He
+                    serves as a reviewer of many journals / transactions of{" "}
+                    <Link
+                      href="https://www.ieee.org/"
+                      className="bg-gray-200 text-pink-500 px-1 rounded"
+                    >
+                      IEEE
+                    </Link>
+                    ,{" "}
+                    <Link
+                      href="https://www.theiet.org/"
+                      className="bg-gray-200 text-pink-500 px-1 rounded"
+                    >
+                      IET
+                    </Link>
+                    ,{" "}
+                    <Link
+                      href="https://www.elsevier.com/"
+                      className="bg-gray-200 text-pink-500 px-1 rounded"
+                    >
+                      Elsevier
+                    </Link>
+                    ,{" "}
+                    <Link
+                      href="https://www.springer.com/"
+                      className="bg-gray-200 text-pink-500 px-1 rounded"
+                    >
+                      Springer
+                    </Link>
+                    ,{" "}
+                    <Link
+                      href="https://www.worldscientific.com/"
+                      className="bg-gray-200 text-pink-500 px-1 rounded"
+                    >
+                      World Scientific Publishers
+                    </Link>
+                    ,{" "}
+                    <Link
+                      href="https://taylorandfrancis.com/"
+                      className="bg-gray-200 text-pink-500 px-1 rounded"
+                    >
+                      Taylor & Francis
+                    </Link>
+                    ,{" "}
+                    <Link
+                      href="https://www.aspbs.com/"
+                      className="bg-gray-200 text-pink-500 px-1 rounded"
+                    >
+                      American Scientific Publishers
+                    </Link>
+                    ,{" "}
+                    <Link
+                      href="https://iopscience.iop.org/"
+                      className="bg-gray-200 text-pink-500 px-1 rounded"
+                    >
+                      IoP
+                    </Link>{" "}
+                    and many others.
+                  </p>
+                </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+                <div className="max-w-4xl mx-auto">
+                  {/* Previous content */}
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    He is also serving / served as an organizing member /
+                    reviewer of many international conferences of repute.{" "}
+                    <span className="bg-gray-200 text-pink-500 px-1 rounded">
+                      Dr. Majumder received "Best Research/Paper Award"
+                    </span>{" "}
+                    from{" "}
+                    <span className="bg-gray-200 text-pink-500 px-1 rounded">
+                      IETE ASHTech-2018, Indore
+                    </span>
+                    ,{" "}
+                    <span className="bg-gray-200 text-pink-500 px-1 rounded">
+                      ICCACCS-2018, Kolkata
+                    </span>{" "}
+                    and{" "}
+                    <span className="bg-gray-200 text-pink-500 px-1 rounded">
+                      ICEIC-2017, Phuket
+                    </span>
+                    . He is a member of{" "}
+                    <Link
+                      href="https://www.ieee.org/"
+                      className="bg-gray-200 text-pink-500 px-1 rounded"
+                    >
+                      IEEE
+                    </Link>
+                    . Although his interests span almost all major aspects of{" "}
+                    <span className="bg-gray-200 text-pink-500 px-1 rounded">
+                      VLSI Circuits and Systems
+                    </span>
+                    .
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <hr className="mx-60 border-gray-400" />
+
+        {/* My Best Work Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-6xl mx-auto ">
+            <h2 className="text-3xl font-bold mb-8 text-center text-blue-900">
+              Research Interest
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {/* <Card className="bg-gray-400 border-none bg-opacity-30">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold mb-2 text-pink-500 shadow-2xl">
+                    Analog & Digital Integrated Circuit
+                  </h3>
+                </CardContent>
+              </Card> */}
+
+              <Card className="bg-gray-400 border-none bg-opacity-30">
+                <CardContent className="p-6 flex items-center justify-between">
+                  <h3 className="text-lg font-semibold mb-2 text-black  flex  gap-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="lucide lucide-chevrons-right text-pink-500"
+                    >
+                      <path d="m6 17 5-5-5-5" />
+                      <path d="m13 17 5-5-5-5" />
+                    </svg>
+                    Analog & Digital Integrated Circuit
+                  </h3>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gray-400 border-none bg-opacity-30">
+                <CardContent className="p-6 flex items-center justify-between">
+                  <h3 className="text-lg font-semibold mb-2 text-black shadow-2xl flex items-center gap-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="lucide lucide-chevrons-right text-pink-500"
+                    >
+                      <path d="m6 17 5-5-5-5" />
+                      <path d="m13 17 5-5-5-5" />
+                    </svg>
+                    Low Power Techniques
+                  </h3>
+                </CardContent>
+              </Card>
+              <Card className="bg-gray-400 border-none bg-opacity-30">
+                <CardContent className="p-6 flex items-center justify-between">
+                  <h3 className="text-lg font-semibold mb-2 text-black  flex  gap-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="lucide lucide-chevrons-right text-pink-500"
+                    >
+                      <path d="m6 17 5-5-5-5" />
+                      <path d="m13 17 5-5-5-5" />
+                    </svg>
+                    Current Mode Design
+                  </h3>
+                </CardContent>
+              </Card>
+              <Card className="bg-gray-400 border-none bg-opacity-30">
+                <CardContent className="p-6 flex items-center justify-between">
+                  <h3 className="text-lg font-semibold mb-2 text-black  flex  gap-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="lucide lucide-chevrons-right text-pink-500"
+                    >
+                      <path d="m6 17 5-5-5-5" />
+                      <path d="m13 17 5-5-5-5" />
+                    </svg>
+                    Clock Distribution And Getting Logic
+                  </h3>
+                </CardContent>
+              </Card>
+              <Card className="bg-gray-400 border-none bg-opacity-30">
+                <CardContent className="p-6 flex items-center justify-between">
+                  <h3 className="text-lg font-semibold mb-2 text-black  flex  gap-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="lucide lucide-chevrons-right text-pink-500"
+                    >
+                      <path d="m6 17 5-5-5-5" />
+                      <path d="m13 17 5-5-5-5" />
+                    </svg>
+                    Wireline Communication Circuit
+                  </h3>
+                </CardContent>
+              </Card>
+              <Card className="bg-gray-400 border-none bg-opacity-30">
+                <CardContent className="p-6 flex items-center justify-between">
+                  <h3 className="text-lg font-semibold mb-2 text-black  flex  gap-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="lucide lucide-chevrons-right text-pink-500"
+                    >
+                      <path d="m6 17 5-5-5-5" />
+                      <path d="m13 17 5-5-5-5" />
+                    </svg>
+                    Smart Electrical System Design
+                  </h3>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        <hr className="p-8 mx-60 border-gray-400" />
+
+        <section>
+          <div className="">
+            <p className="text-black text-2xl font-bold text-center pt-8">
+              Research funded and supported by :{" "}
+            </p>
+
+            <Marquee />
+          </div>
+        </section>
       </div>
     </main>
   );
