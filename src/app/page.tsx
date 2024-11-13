@@ -59,7 +59,7 @@ export default function Home() {
                   className="rounded-lg shadow-2xl"
                 />
                 <p className="text-pink-500 ml-12 mt-10 font-bold">
-                  " Dr. Alak Majumder "
+                &quot;Dr. Alak Majumder&quot;
                 </p>
               </div>
               <div className="md:w-1/2 text-black ">
