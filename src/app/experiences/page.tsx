@@ -105,8 +105,8 @@ export default function ExperiencePage() {
             </CardHeader>
             <CardContent>
               <ul className="space-y-2">
-                <li>Delivered a talk on "Dynamic Power Gating for an IC" in a Faculty Development Program on Recent Trends in VLSI Design at IIT Guwahati, India from 24-28 June 2019.</li>
-                <li>Presented a talk on "Adaptive Power Gating for Power Management" in a Faculty Development Program on Exploring the modern trends in VLSI Design and IoT at NIT Arunachal Pradesh, India from 17-21 June 2019.</li>
+                <li>Delivered a talk on &quot;Dynamic Power Gating for an IC&quot; in a Faculty Development Program on Recent Trends in VLSI Design at IIT Guwahati, India from 24-28 June 2019.</li>
+                <li>Presented a talk on &quot;Adaptive Power Gating for Power Management&quot; in a Faculty Development Program on Exploring the modern trends in VLSI Design and IoT at NIT Arunachal Pradesh, India from 17-21 June 2019.</li>
               </ul>
             </CardContent>
           </Card>

@@ -93,7 +93,7 @@ export default function Home() {
                     under the supervision of{" "}
                     <span className="bg-gray-200 text-pink-500 px-1 rounded">
                       Prof. (Dr) Bidyut K Bhattacharyya (Fellow IEEE)
-                    </span>
+                    </span>{" "}
                     and{" "}
                     <span className="bg-gray-200 text-pink-500 px-1 rounded">
                       Dr. P. Chakraborty
@@ -106,7 +106,7 @@ export default function Home() {
                     and{" "}
                     <span className="bg-gray-200 text-pink-500 px-1 rounded">
                       M-Tech in Microelectronics and VLSI Design
-                    </span>
+                    </span>{" "}
                     from National Institute of Technology, Agartala, India. He
                     serves as a reviewer of many journals / transactions of{" "}
                     <Link
