@@ -334,7 +334,7 @@ export default function Component() {
                     src={collaborator.photo}
                     alt={collaborator.name}
                     fill
-                    className="object-cover rounded-full"
+                    className="object-cover rounded-md"
                   />
                 </div>
                 <div className="p-4">
