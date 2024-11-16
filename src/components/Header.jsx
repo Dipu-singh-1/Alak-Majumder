@@ -46,8 +46,11 @@ export default function Header() {
         <Link href="/projects" className="hover:text-gray-400" prefetch={false}>
           Projects
         </Link>
-        <Link href="/Education" className="hover:text-gray-400" prefetch={false}>
+        <Link href="/education" className="hover:text-gray-400" prefetch={false}>
           Education
+        </Link>
+        <Link href="/iCAS" className="hover:text-gray-400" prefetch={false}>
+          iCAS
         </Link>
       </nav>
       <Button
