@@ -152,7 +152,7 @@ export default function Component() {
       designation: "Assistant Professor",
       department: "Electronics & Communication",
       interests: "Digital & Analog IC",
-      photo: "/images/Abir.GIF",
+      photo: "/images/Abir.jpg",
     },
   ];
 
