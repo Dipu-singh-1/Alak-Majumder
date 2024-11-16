@@ -142,7 +142,7 @@ export default function Component() {
       designation: "Assistant Professor",
       department: "Computer Engineering",
       interests: "Computer Arithmetic, VLSI",
-      photo: "/images/Saeid.PNG",
+      photo: "/images/Saeid.jpg",
     },
     {
       name: "Dr. Abir Jyoti Mondal",
