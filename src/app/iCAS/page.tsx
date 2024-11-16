@@ -329,7 +329,7 @@ export default function Component() {
               className="bg-blue-50 hover:bg-blue-100 transition-colors duration-300 overflow-hidden"
             >
               <CardContent className="p-0">
-                <div className="relative h-60 w-40">
+                <div className="relative h-48 w-48">
                   <Image
                     src={collaborator.photo}
                     alt={collaborator.name}
